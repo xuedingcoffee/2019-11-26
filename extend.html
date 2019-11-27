@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="txt"></textarea>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        //深浅拷贝   $.extend(true,[],ary)
+        //工具方法   $.extend
+        //功能方法   $.fn.extend
+
+
+
+        //工具方法   $.extend   extend里写一个对象，属性名就是方法名，属性值就是函数
+
+        $.extend({
+            trimLeft: function (str) {
+                return str.replace(/^\s+/, '');
+            }
+        })
+
+
+
+        //功能方法 $.fn.extend
+        $.fn.extend({
+            scrollh: function () {
+                return this[0].scrollHeight;
+            }
+        })
+
+        $(document).click(function(){
+            console.log($('#txt').scrollh())
+        })
+
+
+    </script>
+
+</body>
+
+</html>
